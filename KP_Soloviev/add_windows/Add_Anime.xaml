@@ -1,0 +1,67 @@
+﻿<Window x:Class="KP_Soloviev.add_windows.Add_Anime"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KP_Soloviev.add_windows"
+        mc:Ignorable="d"
+        Title="Добавление данных в таблицу Аниме" Height="550" Width="400">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="10"
+                   Text="Добавить аниме" FontSize="16" FontWeight="Bold" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="10" Text="ID аниме" VerticalAlignment="Center" />
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="10" x:Name="AnimeIDTextBox" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10" Text="Название" VerticalAlignment="Center" />
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="10" x:Name="TitleTextBox" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="10" Text="Фото" VerticalAlignment="Center" />
+        <Button Grid.Row="3" Grid.Column="1" Margin="10" Content="Выбрать фото" Click="SelectPhoto_Click" />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="10" Text="Жанр" VerticalAlignment="Center" />
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="10" x:Name="GenreTextBox" />
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="10" Text="Возрастной рейтинг" VerticalAlignment="Center" />
+        <TextBox Grid.Row="5" Grid.Column="1" Margin="10" x:Name="AgeRatingTextBox" />
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Margin="10" Text="Продолжительность" VerticalAlignment="Center" />
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="10" x:Name="DurationTextBox" />
+
+        <TextBlock Grid.Row="7" Grid.Column="0" Margin="10" Text="Количество серий" VerticalAlignment="Center" />
+        <TextBox Grid.Row="7" Grid.Column="1" Margin="10" x:Name="SeriesTextBox" />
+
+        <TextBlock Grid.Row="8" Grid.Column="0" Margin="10" Text="Количество сезонов" VerticalAlignment="Center" />
+        <TextBox Grid.Row="8" Grid.Column="1" Margin="10" x:Name="SeasonsTextBox" />
+
+        <TextBlock Grid.Row="9" Grid.Column="0" Margin="10" Text="Описание" VerticalAlignment="Center" />
+        <TextBox Grid.Row="9" Grid.Column="1" Margin="10" x:Name="DescriptionTextBox" />
+
+        <TextBlock Grid.Row="10" Grid.Column="0" Margin="10" Text="Статус" VerticalAlignment="Center" />
+        <TextBox Grid.Row="10" Grid.Column="1" Margin="10" x:Name="StatusTextBox" />
+
+        <StackPanel Grid.Row="11" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Width="100" Height="40" Margin="10,0,0,0" Content="ДОБАВИТЬ" Click="AddAnime_Click" Style="{StaticResource TabButtonStyle}"/>
+            <Button Width="100" Height="40" Margin="10,0,0,0" Content="ОТМЕНИТЬ" Click="Cancel_Click" Style="{StaticResource TabButtonStyle}"/>
+        </StackPanel>
+    </Grid>
+</Window>

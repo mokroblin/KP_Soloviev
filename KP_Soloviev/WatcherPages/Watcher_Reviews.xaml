@@ -1,0 +1,61 @@
+﻿<Page x:Class="KP_Soloviev.WatcherPages.Watcher_Reviews"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Admin Rating" Background="White">
+
+    <Page.Resources>
+        <!-- Стиль для таблицы -->
+        <Style TargetType="DataGridCell">
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Шапка -->
+        <DockPanel Background="#343a40" Height="50" VerticalAlignment="Top">
+            <TextBlock Text="Anime Collection" Foreground="White" FontSize="24" VerticalAlignment="Center" Margin="10"/>
+            <Button Content="&#x1F6AA;" Name="UserButton" Click="UserButton_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Style="{StaticResource TabButtonStyle}"/>
+        </DockPanel>
+
+        <!-- Вкладки -->
+        <TabControl Margin="0,50,0,0">
+            <TabItem Header="Аниме" MouseLeftButtonUp="AnimeButton_Click"/>
+            <TabItem Header="Избранное" MouseLeftButtonUp="FavoritesButton_Click"/>
+            <TabItem Header="Рейтинг" MouseLeftButtonUp="RatingButton_Click"/>
+            <TabItem Header="Отзывы" MouseLeftButtonUp="ReviewsButton_Click"/>
+        </TabControl>
+
+        <!-- Панель опций пользователя -->
+        <StackPanel Name="UserOptions" Visibility="Collapsed" Background="LightGray" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,10,0">
+            <Button Content="Change Account" Click="ChangeAccountButton_Click" Margin="5" Style="{StaticResource TabButtonStyle}"/>
+            <Button Content="Logout" Click="LogoutButton_Click" Margin="5" Style="{StaticResource TabButtonStyle}"/>
+        </StackPanel>
+
+        <!-- Таблица Rating -->
+        <DataGrid Name="ReviewsDataGrid" Grid.Column="0" Margin="60,110,60,72" AutoGenerateColumns="False" HorizontalScrollBarVisibility="Disabled">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Заголовок" Binding="{Binding Title}" Width="*"/>
+                <DataGridTextColumn Header="Текст" Binding="{Binding Text}" Width="*"/>
+                <DataGridTextColumn Header="Название аниме" Binding="{Binding AnimeTitle}" Width="*"/>
+                <DataGridTextColumn Header="Автор" Binding="{Binding Author}" Width="*"/>
+                <DataGridTextColumn Header="Дата написания" Binding="{Binding Date}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Кнопки управления -->
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <Button Content="Оставить отзыв" Click="AddButton_Click" Margin="5" Style="{StaticResource TabButtonStyle}"/>
+            <Button Content="Удалить отзыв" Click="DeleteButton_Click" Margin="5" Style="{StaticResource TabButtonStyle}"/>
+        </StackPanel>
+        <Image Source="/Images/Logo.png" Width="250" Height="125" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Row="1"/>
+    </Grid>
+</Page>

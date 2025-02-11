@@ -1,0 +1,33 @@
+﻿<Page x:Class="KP_Soloviev.Pages.ChoosePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Регистрация/Вход">
+    <Grid Background="White">
+        <DockPanel Background="#343a40" Height="50" VerticalAlignment="Top">
+            <TextBlock Text="Anime Collection" Foreground="White" FontSize="24" VerticalAlignment="Center" Margin="10"/>
+        </DockPanel>
+        <!-- Обернем форму в Border для белого фона, скругленных углов и тени -->
+        <Border Background="White" CornerRadius="10" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Margin="0,100,0,0" Width="300" Padding="20">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="5"/>
+            </Border.Effect>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Логотип -->
+                <Image Source="/Images/Logo.png" Width="130" Height="130" Margin="0,-50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <!-- Кнопки авторизации и регистрации -->
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Button x:Name="btnAuthorize" Content="АВТОРИЗАЦИЯ" Width="200" Height="50" Click="Authorize_Click" Margin="0,20,0,0" Style="{StaticResource TabButtonStyle}"/>
+                    <Button x:Name="btnRegister" Content="РЕГИСТРАЦИЯ" Width="200" Height="50" Click="Register_Click" Margin="0,25,0,0" Style="{StaticResource TabButtonStyle}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
